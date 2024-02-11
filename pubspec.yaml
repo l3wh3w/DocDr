@@ -1,0 +1,43 @@
+
+name: docdr
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dots_indicator: ^2.1.1
+  provider: ^6.0.5
+  kartal: ^3.4.2
+  shared_preferences: ^2.0.13
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.2.1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+   - lib/assets/icons/
+   - lib/assets/app_logo.png
+ 
+  fonts:
+    - family: MyFlutterApp
+      fonts:
+        - asset: lib/assets/fonts/MyFlutterApp.ttf
+ 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "lib/assets/app_logo.png"
+  adaptive_icon_background: "#ffffff"
+  
