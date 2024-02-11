@@ -76,7 +76,7 @@ class _GirisSayfasiState extends State<GirisSayfasi> {
               alignment: Alignment.bottomCenter,
               child: TextButton.icon(
                 icon: Image.asset(
-                  "lib/assets/icons/sai.png",
+                  "assets/icons/sai.png",
                   width: 35, // Adjust the width as needed
                   height: 35, // Adjust the height as needed
                 ),
