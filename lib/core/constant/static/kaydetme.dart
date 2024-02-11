@@ -1,4 +1,4 @@
-import 'package:docdr/notlar/sayfa_listesi.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -7,8 +7,7 @@ class ResultList {
 
   static List<double> totalList = List.generate(SayfaListesi.stringSayfa.length, (_) => 0.0);
 
-  static List<List<int>> birinciIsimList =
-      List.generate(SayfaListesi.ikinciSayfaIndex + 1, (_) => []);
+  static List<List<int>> birinciIsimList = List.generate(SayfaListesi.ikinciSayfaIndex + 1, (_) => []);
 
   static List<List<int>> indexList = List.generate(SayfaListesi.dorduncuSayfaIndex + 1, (_) => []);
 

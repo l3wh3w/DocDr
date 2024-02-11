@@ -1,4 +1,4 @@
-import 'package:docdr/custom_widget/provider.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
 import 'package:flutter/material.dart';
 
 class TemizlemeKutusu extends StatefulWidget {

@@ -27,17 +27,17 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - lib/assets/icons/
-   - lib/assets/app_logo.png
+   - assets/icons/
+   - assets/app_logo.png
  
   fonts:
     - family: MyFlutterApp
       fonts:
-        - asset: lib/assets/fonts/MyFlutterApp.ttf
+        - asset: assets/fonts/MyFlutterApp.ttf
  
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "lib/assets/app_logo.png"
+  image_path: "assets/app_logo.png"
   adaptive_icon_background: "#ffffff"
   

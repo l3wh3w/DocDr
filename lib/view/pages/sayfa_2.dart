@@ -1,15 +1,15 @@
-import 'package:docdr/custom_widget/alert_dialog.dart';
-import 'package:docdr/custom_widget/ekle_baba.dart';
-import 'package:docdr/custom_widget/new_radio_button.dart';
-import 'package:docdr/custom_widget/provider.dart';
-import 'package:docdr/custom_widget/temizleme_kutusu.dart';
-import 'package:docdr/custom_widget/textfield_box.dart';
-import 'package:docdr/custom_widget/wrap_listesi.dart';
-import 'package:docdr/notlar/icon.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/notlar/sayfa_listesi.dart';
-import 'package:docdr/notlar/style.dart';
+import 'package:docdr/product/custom_widget/alert_dialog.dart';
+import 'package:docdr/product/custom_widget/ekle_baba.dart';
+import 'package:docdr/product/custom_widget/new_radio_button.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
+import 'package:docdr/product/custom_widget/temizleme_kutusu.dart';
+import 'package:docdr/product/custom_widget/textfield_box.dart';
+import 'package:docdr/product/custom_widget/wrap_listesi.dart';
+import 'package:docdr/core/constant/static/icon.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
+import 'package:docdr/core/constant/static/style.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -54,21 +54,13 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
                       isimsirasi: isimsirasi,
                       onChanged: _handleRadioValueChange),
                   RadioButton(
-                      icerik: Isimler.icinciIsim,
-                      value: 2,
-                      isimsirasi: isimsirasi,
-                      onChanged: _handleRadioValueChange),
+                      icerik: Isimler.icinciIsim, value: 2, isimsirasi: isimsirasi, onChanged: _handleRadioValueChange),
                 ],
               ),
               RadioButton(
-                  icerik: Isimler.ucuncuIsim,
-                  value: 3,
-                  isimsirasi: isimsirasi,
-                  onChanged: _handleRadioValueChange)
+                  icerik: Isimler.ucuncuIsim, value: 3, isimsirasi: isimsirasi, onChanged: _handleRadioValueChange)
             ]),
-            TextFieldBox(
-                controller: sayiController,
-                decoration: ProjectStyle.textFieldInputDecoration("Yazar Sayısı")),
+            TextFieldBox(controller: sayiController, decoration: ProjectStyle.textFieldInputDecoration("Yazar Sayısı")),
             Column(
               children: Makaleler.ulusalMak.asMap().entries.map((entry) {
                 final index = entry.key;
@@ -89,11 +81,9 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
                             sayiController: sayiController,
                             makalepuani: Makaleler.ulusalPuan[index],
                             updateCallback: (double sonucDeger) {
-                              hesaplamaProvider.updateValues(
-                                  sonucDeger, SayfaListesi.ikinciSayfaIndex);
+                              hesaplamaProvider.updateValues(sonucDeger, SayfaListesi.ikinciSayfaIndex);
                               hesaplamaProvider.updateIndex(SayfaListesi.ikinciSayfaIndex, index);
-                              hesaplamaProvider.updateBirinciIsim(
-                                  isimsirasi, index, SayfaListesi.ikinciSayfaIndex);
+                              hesaplamaProvider.updateBirinciIsim(isimsirasi, index, SayfaListesi.ikinciSayfaIndex);
                               sayiController.clear();
                             },
                             isimsirasi: isimsirasi,
@@ -109,8 +99,7 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
           WrapListesi(
             results: ResultList.resultList[SayfaListesi.ikinciSayfaIndex],
             removeResult: (indexToRemove, valueToRemove, sayfaIndex) {
-              hesaplamaProvider.removeResult(
-                  indexToRemove, valueToRemove, SayfaListesi.ikinciSayfaIndex);
+              hesaplamaProvider.removeResult(indexToRemove, valueToRemove, SayfaListesi.ikinciSayfaIndex);
               hesaplamaProvider.removeBirinciIsim(indexToRemove, SayfaListesi.ikinciSayfaIndex);
               hesaplamaProvider.removeIndex(indexToRemove, SayfaListesi.ikinciSayfaIndex);
             },
@@ -120,12 +109,8 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ToplamSonuc(total: ResultList.totalList[SayfaListesi.ikinciSayfaIndex]),
-              if (ResultList.birinciIsimList[SayfaListesi.ikinciSayfaIndex]
-                          .where((x) => x == 1)
-                          .length >
-                      1 &&
-                  ResultList.indexList[SayfaListesi.ikinciSayfaIndex].where((x) => x == 0).length >
-                      1 &&
+              if (ResultList.birinciIsimList[SayfaListesi.ikinciSayfaIndex].where((x) => x == 1).length > 1 &&
+                  ResultList.indexList[SayfaListesi.ikinciSayfaIndex].where((x) => x == 0).length > 1 &&
                   ResultList.resultList[SayfaListesi.ikinciSayfaIndex].length > 2)
                 const MedalIcon(),
               IconButton(

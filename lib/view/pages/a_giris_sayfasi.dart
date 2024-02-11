@@ -1,9 +1,9 @@
 // introduction_page.dart
 
-import 'package:docdr/custom_widget/text_box.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/notlar/style.dart';
+import 'package:docdr/product/custom_widget/text_box.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/core/constant/static/style.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -83,8 +83,7 @@ class _GirisSayfasiState extends State<GirisSayfasi> {
                 onPressed: () {
                   _launchInBrowser("www.saibilisim.com");
                 },
-                label: Text("Bilişim",
-                    style: ProjectStyle.projectTextStyle.copyWith(color: Colors.blue)),
+                label: Text("Bilişim", style: ProjectStyle.projectTextStyle.copyWith(color: Colors.blue)),
               ),
             ),
             const Padding(

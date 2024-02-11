@@ -1,4 +1,4 @@
-import 'package:docdr/notlar/makaleler.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {

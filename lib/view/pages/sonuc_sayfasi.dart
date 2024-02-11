@@ -1,8 +1,8 @@
-import 'package:docdr/custom_widget/provider.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/notlar/sonuc_sayfa.dart';
-import 'package:docdr/notlar/style.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/core/constant/static/sonuc_sayfa.dart';
+import 'package:docdr/core/constant/static/style.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
