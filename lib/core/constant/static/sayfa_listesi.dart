@@ -1,17 +1,17 @@
-import 'package:docdr/pages/sayfa_1.dart';
-import 'package:docdr/pages/sayfa_2.dart';
-import 'package:docdr/pages/sayfa_3.dart';
-import 'package:docdr/pages/sayfa_4.dart';
-import 'package:docdr/pages/sayfa_5.dart';
-import 'package:docdr/pages/sayfa_6.dart';
-import 'package:docdr/pages/sayfa_7.dart';
-import 'package:docdr/pages/sayfa_8.dart';
-import 'package:docdr/pages/sayfa_9.dart';
-import 'package:docdr/pages/sayfa_10.dart';
-import 'package:docdr/pages/sayfa_11.dart';
-import 'package:docdr/pages/sayfa_12.dart';
-import 'package:docdr/pages/sayfa_13.dart';
-import 'package:docdr/pages/sonuc_sayfasi.dart';
+import 'package:docdr/view/pages/sayfa_1.dart';
+import 'package:docdr/view/pages/sayfa_2.dart';
+import 'package:docdr/view/pages/sayfa_3.dart';
+import 'package:docdr/view/pages/sayfa_4.dart';
+import 'package:docdr/view/pages/sayfa_5.dart';
+import 'package:docdr/view/pages/sayfa_6.dart';
+import 'package:docdr/view/pages/sayfa_7.dart';
+import 'package:docdr/view/pages/sayfa_8.dart';
+import 'package:docdr/view/pages/sayfa_9.dart';
+import 'package:docdr/view/pages/sayfa_10.dart';
+import 'package:docdr/view/pages/sayfa_11.dart';
+import 'package:docdr/view/pages/sayfa_12.dart';
+import 'package:docdr/view/pages/sayfa_13.dart';
+import 'package:docdr/view/pages/sonuc_sayfasi.dart';
 import 'package:flutter/material.dart';
 
 class SayfaListesi {

@@ -1,4 +1,4 @@
-import 'package:docdr/notlar/icon.dart';
+import 'package:docdr/core/constant/static/icon.dart';
 import 'package:flutter/material.dart';
 
 class WrapListesi extends StatefulWidget {

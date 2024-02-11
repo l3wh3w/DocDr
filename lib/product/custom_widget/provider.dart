@@ -1,4 +1,4 @@
-import 'package:docdr/notlar/kaydetme.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
 
 import 'package:flutter/material.dart';
 
@@ -39,16 +39,12 @@ class HesaplamaProvider extends ChangeNotifier {
   }
 
   void updateBirinciIsim(isimsirasi, index, int sayfaIndex) {
-    isimsirasi == 1
-        ? ResultList.birinciIsimList[sayfaIndex].add(1)
-        : ResultList.birinciIsimList[sayfaIndex].add(0);
+    isimsirasi == 1 ? ResultList.birinciIsimList[sayfaIndex].add(1) : ResultList.birinciIsimList[sayfaIndex].add(0);
     notifyListeners();
   }
 
   void updateSCIBirinciIsim(isimsirasi, index) {
-    isimsirasi == 1 && index <= 3
-        ? ResultList.isSCIBirinciIsim.add(1)
-        : ResultList.isSCIBirinciIsim.add(0);
+    isimsirasi == 1 && index <= 3 ? ResultList.isSCIBirinciIsim.add(1) : ResultList.isSCIBirinciIsim.add(0);
     notifyListeners();
   }
 

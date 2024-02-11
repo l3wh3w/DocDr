@@ -1,4 +1,4 @@
-import 'package:docdr/notlar/style.dart';
+import 'package:docdr/core/constant/static/style.dart';
 import 'package:flutter/material.dart';
 
 class QTextBox extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:docdr/pages/ana_widget.dart';
-import 'package:docdr/pages/basvuru_sartlari.dart';
-import 'package:docdr/pages/a_giris_sayfasi.dart';
+import 'package:docdr/view/pages/ana_widget.dart';
+import 'package:docdr/view/pages/basvuru_sartlari.dart';
+import 'package:docdr/view/pages/a_giris_sayfasi.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,10 +23,11 @@ class MyApp extends StatelessWidget {
               ),
             )),
             bottomAppBarTheme: const BottomAppBarTheme(color: Color.fromARGB(255, 232, 236, 236)),
-            appBarTheme: const AppBarTheme(
-              color: Color(0xff00a896),
+            appBarTheme: AppBarTheme(
+              color: Colors.indigo[300],
               elevation: 0,
-              iconTheme: IconThemeData(color: Colors.black),
+              iconTheme: const IconThemeData(color: Colors.white),
+              centerTitle: true,
             )),
         darkTheme: ThemeData.dark().copyWith(
             appBarTheme: AppBarTheme(

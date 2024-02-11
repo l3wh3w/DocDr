@@ -1,25 +1,25 @@
-import 'package:docdr/custom_widget/alert_dialog.dart';
-import 'package:docdr/custom_widget/ekle_dansiman.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/custom_widget/temizleme_kutusu.dart';
-import 'package:docdr/custom_widget/textfield_box.dart';
-import 'package:docdr/custom_widget/wrap_listesi.dart';
-import 'package:docdr/notlar/icon.dart';
-import 'package:docdr/notlar/sayfa_listesi.dart';
-import 'package:docdr/notlar/style.dart';
-import 'package:docdr/custom_widget/provider.dart';
+import 'package:docdr/product/custom_widget/alert_dialog.dart';
+import 'package:docdr/product/custom_widget/ekle_dansiman.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/product/custom_widget/temizleme_kutusu.dart';
+import 'package:docdr/product/custom_widget/textfield_box.dart';
+import 'package:docdr/product/custom_widget/wrap_listesi.dart';
+import 'package:docdr/core/constant/static/icon.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
+import 'package:docdr/core/constant/static/style.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BesinciSayfa extends StatefulWidget {
-  const BesinciSayfa({super.key});
+class SekizinciSayfa extends StatefulWidget {
+  const SekizinciSayfa({super.key});
 
   @override
-  State<BesinciSayfa> createState() => _BesinciSayfaState();
+  State<SekizinciSayfa> createState() => _SekizinciSayfa();
 }
 
-class _BesinciSayfaState extends State<BesinciSayfa> {
+class _SekizinciSayfa extends State<SekizinciSayfa> {
   final HesaplamaProvider hesaplamaProvider = HesaplamaProvider();
 
   int? isimsirasi = 1;
@@ -37,11 +37,10 @@ class _BesinciSayfaState extends State<BesinciSayfa> {
               Column(children: [
                 Padding(
                     padding: ProjectStyle.yazilarPadding(),
-                    child: Text(Yazilar.atifMak,
-                        textAlign: ProjectStyle.yazilarAlign(),
-                        style: ProjectStyle.projectTextStyle)),
+                    child: Text(Yazilar.toplantiMak,
+                        textAlign: ProjectStyle.yazilarAlign(), style: ProjectStyle.projectTextStyle)),
                 Column(
-                  children: Makaleler.atifMak.asMap().entries.map((entry) {
+                  children: Makaleler.toplantiMak.asMap().entries.map((entry) {
                     final index = entry.key;
                     final makale = entry.value;
 
@@ -57,10 +56,9 @@ class _BesinciSayfaState extends State<BesinciSayfa> {
                                 style: ProjectStyle.projectTextStyle,
                               ),
                               trailing: EkleDanisman(
-                                makalepuani: Makaleler.atifPuan[index],
+                                makalepuani: Makaleler.toplantiPuan[index],
                                 updateCallback: (double sonucDeger) {
-                                  hesaplamaProvider.updateValues(
-                                      sonucDeger, SayfaListesi.besinciSayfaIndex);
+                                  hesaplamaProvider.updateValues(sonucDeger, SayfaListesi.sekizinciSayfaIndex);
                                 },
                                 isimsirasi: isimsirasi,
                               ),
@@ -75,21 +73,21 @@ class _BesinciSayfaState extends State<BesinciSayfa> {
             ],
           ),
           WrapListesi(
-            results: ResultList.resultList[SayfaListesi.besinciSayfaIndex],
+            results: ResultList.resultList[SayfaListesi.sekizinciSayfaIndex],
             removeResult: hesaplamaProvider.removeResult,
-            sayfaIndex: SayfaListesi.besinciSayfaIndex,
+            sayfaIndex: SayfaListesi.sekizinciSayfaIndex,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ToplamSonuc(total: ResultList.totalList[SayfaListesi.besinciSayfaIndex]),
-              if (ResultList.totalList[SayfaListesi.besinciSayfaIndex] > 4) const MedalIcon(),
+              ToplamSonuc(total: ResultList.totalList[SayfaListesi.sekizinciSayfaIndex]),
+              if (ResultList.totalList[SayfaListesi.sekizinciSayfaIndex] > 5) const MedalIcon(),
               IconButton(
                   onPressed: () => showDialog(
                         context: context,
                         builder: (BuildContext context) {
                           return CustomAlertDialog(
-                            sayfaIndex: SayfaListesi.besinciSayfaIndex,
+                            sayfaIndex: SayfaListesi.sekizinciSayfaIndex,
                           );
                         },
                       ),
@@ -98,7 +96,7 @@ class _BesinciSayfaState extends State<BesinciSayfa> {
           ),
           TemizlemeKutusu(
             temizle: hesaplamaProvider.temizle,
-            sayfaIndex: SayfaListesi.besinciSayfaIndex,
+            sayfaIndex: SayfaListesi.sekizinciSayfaIndex,
           )
         ],
       ),

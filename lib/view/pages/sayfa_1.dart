@@ -1,16 +1,16 @@
-import 'package:docdr/custom_widget/alert_dialog.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/custom_widget/new_radio_button.dart';
-import 'package:docdr/custom_widget/temizleme_kutusu.dart';
-import 'package:docdr/custom_widget/text_box.dart';
-import 'package:docdr/custom_widget/textfield_box.dart';
-import 'package:docdr/custom_widget/ekle_baba.dart';
-import 'package:docdr/custom_widget/wrap_listesi.dart';
-import 'package:docdr/notlar/icon.dart';
-import 'package:docdr/notlar/sayfa_listesi.dart';
-import 'package:docdr/notlar/style.dart';
-import 'package:docdr/custom_widget/provider.dart';
+import 'package:docdr/product/custom_widget/alert_dialog.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/product/custom_widget/new_radio_button.dart';
+import 'package:docdr/product/custom_widget/temizleme_kutusu.dart';
+import 'package:docdr/product/custom_widget/text_box.dart';
+import 'package:docdr/product/custom_widget/textfield_box.dart';
+import 'package:docdr/product/custom_widget/ekle_baba.dart';
+import 'package:docdr/product/custom_widget/wrap_listesi.dart';
+import 'package:docdr/core/constant/static/icon.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
+import 'package:docdr/core/constant/static/style.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -47,8 +47,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
               Padding(
                   padding: ProjectStyle.yazilarPadding(),
                   child: Text(Yazilar.ulusalMak,
-                      textAlign: ProjectStyle.yazilarAlign(),
-                      style: ProjectStyle.projectTextStyle)),
+                      textAlign: ProjectStyle.yazilarAlign(), style: ProjectStyle.projectTextStyle)),
               Column(children: [
                 Column(children: [
                   Row(
@@ -67,14 +66,10 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
                     ],
                   ),
                   RadioButton(
-                      icerik: Isimler.ucuncuIsim,
-                      value: 3,
-                      isimsirasi: isimsirasi,
-                      onChanged: _handleRadioValueChange)
+                      icerik: Isimler.ucuncuIsim, value: 3, isimsirasi: isimsirasi, onChanged: _handleRadioValueChange)
                 ]),
                 TextFieldBox(
-                    controller: sayiController,
-                    decoration: ProjectStyle.textFieldInputDecoration("Yazar Sayısı")),
+                    controller: sayiController, decoration: ProjectStyle.textFieldInputDecoration("Yazar Sayısı")),
                 Column(children: [
                   Card(
                     elevation: 4,
@@ -103,8 +98,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
                                       updateCallback: (
                                         double sonucDeger,
                                       ) {
-                                        hesaplamaProvider.updateValues(
-                                            sonucDeger, SayfaListesi.birinciSayfaIndex);
+                                        hesaplamaProvider.updateValues(sonucDeger, SayfaListesi.birinciSayfaIndex);
                                         sayiController.clear();
                                         hesaplamaProvider.updateBirinciIsim(
                                             isimsirasi, index, SayfaListesi.birinciSayfaIndex);
@@ -132,8 +126,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
                                       sayiController: sayiController,
                                       makalepuani: Makaleler.sCIpuan[index],
                                       updateCallback: (double sonucDeger) {
-                                        hesaplamaProvider.updateValues(
-                                            sonucDeger, SayfaListesi.birinciSayfaIndex);
+                                        hesaplamaProvider.updateValues(sonucDeger, SayfaListesi.birinciSayfaIndex);
                                         hesaplamaProvider.updateBirinciIsim(
                                             isimsirasi, index, SayfaListesi.birinciSayfaIndex);
                                         hesaplamaProvider.updateSCIBirinciIsim(isimsirasi, index);
@@ -191,8 +184,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
           WrapListesi(
             results: ResultList.resultList[SayfaListesi.birinciSayfaIndex],
             removeResult: (indexToRemove, valueToRemove, sayfaIndex) {
-              hesaplamaProvider.removeResult(
-                  indexToRemove, valueToRemove, SayfaListesi.birinciSayfaIndex);
+              hesaplamaProvider.removeResult(indexToRemove, valueToRemove, SayfaListesi.birinciSayfaIndex);
               hesaplamaProvider.removeBirinciIsim(indexToRemove, SayfaListesi.birinciSayfaIndex);
               hesaplamaProvider.removeisSCI(indexToRemove);
             },

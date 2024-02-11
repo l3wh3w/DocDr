@@ -1,14 +1,14 @@
-import 'package:docdr/custom_widget/alert_dialog.dart';
-import 'package:docdr/custom_widget/ekle_dansiman.dart';
-import 'package:docdr/notlar/kaydetme.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/custom_widget/temizleme_kutusu.dart';
-import 'package:docdr/custom_widget/textfield_box.dart';
-import 'package:docdr/custom_widget/wrap_listesi.dart';
-import 'package:docdr/notlar/icon.dart';
-import 'package:docdr/notlar/sayfa_listesi.dart';
-import 'package:docdr/notlar/style.dart';
-import 'package:docdr/custom_widget/provider.dart';
+import 'package:docdr/product/custom_widget/alert_dialog.dart';
+import 'package:docdr/product/custom_widget/ekle_dansiman.dart';
+import 'package:docdr/core/constant/static/kaydetme.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/product/custom_widget/temizleme_kutusu.dart';
+import 'package:docdr/product/custom_widget/textfield_box.dart';
+import 'package:docdr/product/custom_widget/wrap_listesi.dart';
+import 'package:docdr/core/constant/static/icon.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
+import 'package:docdr/core/constant/static/style.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,8 +38,7 @@ class _DokuzuncuSayfa extends State<DokuzuncuSayfa> {
                 Padding(
                     padding: ProjectStyle.yazilarPadding(),
                     child: Text(Yazilar.egitimMak,
-                        textAlign: ProjectStyle.yazilarAlign(),
-                        style: ProjectStyle.projectTextStyle)),
+                        textAlign: ProjectStyle.yazilarAlign(), style: ProjectStyle.projectTextStyle)),
                 Column(
                   children: Makaleler.egitimMak.asMap().entries.map((entry) {
                     final index = entry.key;
@@ -59,8 +58,7 @@ class _DokuzuncuSayfa extends State<DokuzuncuSayfa> {
                               trailing: EkleDanisman(
                                 makalepuani: Makaleler.egitimPuan[index],
                                 updateCallback: (double sonucDeger) {
-                                  hesaplamaProvider.updateValues(
-                                      sonucDeger, SayfaListesi.dokuzuncuSayfaIndex);
+                                  hesaplamaProvider.updateValues(sonucDeger, SayfaListesi.dokuzuncuSayfaIndex);
                                 },
                                 isimsirasi: isimsirasi,
                               ),

@@ -1,6 +1,6 @@
-import 'package:docdr/custom_widget/provider.dart';
-import 'package:docdr/notlar/makaleler.dart';
-import 'package:docdr/notlar/sayfa_listesi.dart';
+import 'package:docdr/product/custom_widget/provider.dart';
+import 'package:docdr/core/constant/static/makaleler.dart';
+import 'package:docdr/core/constant/static/sayfa_listesi.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -54,7 +54,6 @@ class _AnaWidget extends State<AnaWidget> {
                     width: 50,
                   ),
             title: Text(Basliklar.basliklarList[_currPageValue.toInt()]),
-            centerTitle: true,
           ),
           bottomNavigationBar: BottomAppBar(
             child: Row(
@@ -108,20 +107,9 @@ class _AnaWidget extends State<AnaWidget> {
               ],
             ),
           ),
-          body: Column(
-            children: [
-              const Divider(
-                height: 0, // Çizginin yüksekliğini isteğe bağlı olarak ayarlayabilirsiniz
-                thickness: 15, // Çizgi kalınlığını ayarlayabilirsiniz
-                color: Colors.black, // Çizgi rengini ayarlayabilirsiniz
-              ),
-              Expanded(
-                child: PageView(
-                  controller: _pageController,
-                  children: SayfaListesi.widgetSayfa,
-                ),
-              ),
-            ],
+          body: PageView(
+            controller: _pageController,
+            children: SayfaListesi.widgetSayfa,
           ),
         ));
   }
