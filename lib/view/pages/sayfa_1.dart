@@ -90,7 +90,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
                                     QTextBox(
                                       index: index,
                                       makale: Makaleler.sCImak,
-                                      width: 60,
+                                      width: 70,
                                     ),
                                     EkleBaba(
                                       sayiController: sayiController,
@@ -120,7 +120,7 @@ class _BirinciSayfaState extends State<BirinciSayfa> {
                                     QTextBox(
                                       index: index,
                                       makale: Makaleler.sCImak,
-                                      width: 60,
+                                      width: 70,
                                     ),
                                     EkleBaba(
                                       sayiController: sayiController,

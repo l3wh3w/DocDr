@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class ProjectStyle {
   static TextStyle projectTextStyle = const TextStyle(
-    color: Colors.black,
     fontSize: 16,
   );
 

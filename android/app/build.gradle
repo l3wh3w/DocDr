@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace "com.saibilisim.docdr"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    ndkVersion '26.1.10909125'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -77,3 +77,5 @@ flutter {
 }
 
 dependencies {}
+
+android.buildTypes.release.ndk.debugSymbolLevel = "FULL"

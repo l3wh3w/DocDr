@@ -20,7 +20,7 @@ class _TemizlemeKutusuState extends State<TemizlemeKutusu> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 90,
+      width: 100,
       child: ElevatedButton(
         onPressed: () {
           setState(() {
